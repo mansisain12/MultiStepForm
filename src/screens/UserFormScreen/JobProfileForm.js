@@ -1,20 +1,20 @@
 import React, {useState} from 'react';
-import {Text, StyleSheet, SafeAreaView} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
+import {View, Text, SafeAreaView} from 'react-native';
+import {useDispatch} from 'react-redux';
 import AntDesignIcon from '../../components/AntDesignIcon';
 
-import {userDetails} from '../../redux/actions/userAction';
+import {userCompanyName, userJobTitle} from '../../redux/actions/userAction';
 import TextField from '../../components/TextField';
 import ButtonComponent from '../../components/ButtonComponent';
 import {validateName} from '../../utils/validation';
 import UserInfoModal from '../../components/UserInfoModal';
+import {styles} from '../../utils/globalStyle';
 
-const ContactDetailsForm = () => {
+const ContactDetailsForm = ({navigation}) => {
   const dispatch = useDispatch();
   const [companyName, setCompanyName] = useState('');
   const [jobTitle, setJobTitle] = useState('');
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const userInfo = useSelector(state => state.userDetailsReducer.userInfo);
 
   const [validation, setValidation] = useState({
     companyNameError: '',
@@ -25,27 +25,32 @@ const ContactDetailsForm = () => {
     companyName == '' || !validateName(companyName)
       ? setValidation({
           ...validation,
-          companyNameError: 'Company name is required',
+          companyNameError: 'Please enter a valid company name',
         })
       : setValidation({...validation, companyNameError: ''});
   };
   const jobTitleValidator = () => {
     jobTitle == '' || !validateName(jobTitle)
-      ? setValidation({...validation, jobTitleError: 'Last name is required'})
+      ? setValidation({
+          ...validation,
+          jobTitleError: 'Please enter a valid job title',
+        })
       : setValidation({...validation, jobTitleError: ''});
   };
   const btnHandler = () => {
-    const userInfo = {
-      companyName: companyName,
-      jobTitle: jobTitle,
-    };
-    dispatch(userDetails(userInfo));
+    dispatch(userCompanyName(companyName));
+    dispatch(userJobTitle(jobTitle));
     setIsModalVisible(true);
+  };
+  const closeBtnHandler = () => {
+    navigation.popToTop();
+    setIsModalVisible(false);
   };
 
   return (
     <>
       <AntDesignIcon />
+      <View style={styles.screenHeader}></View>
       <SafeAreaView style={styles.screen}>
         <Text style={styles.headerTxt}>
           Thanks!😊 Just a few more details and we are done!
@@ -72,27 +77,9 @@ const ContactDetailsForm = () => {
             !validateName(companyName) || !validateName(jobTitle) ? true : false
           }
         />
-        <UserInfoModal
-          visible={isModalVisible}
-          closeBtn={() => setIsModalVisible(false)}
-          CName={userInfo.companyName}
-          jobTitle={jobTitle}
-        />
+        <UserInfoModal visible={isModalVisible} closeBtn={closeBtnHandler} />
       </SafeAreaView>
     </>
   );
 };
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  headerTxt: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    margin: '5%',
-    textAlign: 'center',
-  },
-});
 export default ContactDetailsForm;

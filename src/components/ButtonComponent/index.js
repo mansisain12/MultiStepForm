@@ -8,6 +8,7 @@ const ButtonComponent = ({btnText, onPress, disabled}) => {
     <TouchableOpacity
       style={styles.btnContainer}
       onPress={onPress}
+      activeOpacity={0.9}
       disabled={disabled}>
       <Text style={styles.textContent}>{btnText}</Text>
     </TouchableOpacity>

@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import {useDispatch} from 'react-redux';
 import AntDesignIcon from '../../components/AntDesignIcon';
 
-import {userDetails} from '../../redux/actions/userAction';
+import {userFirstName, userLastName} from '../../redux/actions/userAction';
 import TextField from '../../components/TextField';
 import ButtonComponent from '../../components/ButtonComponent';
 import {validateName} from '../../utils/validation';
@@ -33,17 +33,15 @@ const ContactDetailsForm = () => {
       : setValidation({...validation, lNameError: ''});
   };
   const btnHandler = () => {
-    const userInfo = {
-      fName: fName,
-      lName: lName,
-    };
-    dispatch(userDetails(userInfo));
+    dispatch(userFirstName(fName));
+    dispatch(userLastName(lName));
     navigation.navigate('JobProfileForm');
   };
 
   return (
     <>
       <AntDesignIcon />
+      <View style={styles.screenHeader}></View>
       <SafeAreaView style={styles.screen}>
         <Text style={styles.headerTxt}>
           Could you tell us a bit more about yourself?

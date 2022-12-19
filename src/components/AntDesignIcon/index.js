@@ -3,7 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 import {View} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-import {styles} from './styles';
+import {styles} from '../../utils/globalStyle';
 
 const AntDesignIcon = () => {
   const {goBack} = useNavigation();

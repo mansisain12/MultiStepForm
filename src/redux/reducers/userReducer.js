@@ -1,21 +1,51 @@
-import {USER_DETAILS} from '../constants/userTypes';
+import {
+  USER_DEVELOPMENT,
+  USER_DEPARTMENT,
+  USER_EMAIL,
+  USER_PHONE,
+  USER_FNAME,
+  USER_LNAME,
+  USER_COMPANYNAME,
+  USER_JOBTITLE,
+} from '../constants/userTypes';
 
 const initialState = {
-  userInfo: {
-    email: '',
-    phone: '',
-    fName: '',
-    lName: '',
-    companyName: '',
-    jobTitle: '',
-  },
+  development: '',
+  department: '',
+  email: '',
+  phone: '',
+  fName: '',
+  lName: '',
+  companyName: '',
+  jobTitle: '',
 };
 
 const userDetailsReducer = (state = initialState, action) => {
+  console.log(action.payload);
   switch (action.type) {
-    case USER_DETAILS:
-      console.log(action.payload);
-      return {...state, userDetails: action.payload};
+    case USER_DEVELOPMENT:
+      return {...state, development: action.payload};
+
+    case USER_DEPARTMENT:
+      return {...state, department: action.payload};
+
+    case USER_EMAIL:
+      return {...state, email: action.payload};
+
+    case USER_PHONE:
+      return {...state, phone: action.payload};
+
+    case USER_FNAME:
+      return {...state, fName: action.payload};
+
+    case USER_LNAME:
+      return {...state, lName: action.payload};
+
+    case USER_COMPANYNAME:
+      return {...state, companyName: action.payload};
+
+    case USER_JOBTITLE:
+      return {...state, jobTitle: action.payload};
 
     default:
       return state;

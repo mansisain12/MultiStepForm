@@ -1,1 +1,8 @@
-export const USER_DETAILS = 'USER_DETAILS';
+export const USER_DEVELOPMENT = 'USER_DEVELOPMENT';
+export const USER_DEPARTMENT = 'USER_DEPARTMENT';
+export const USER_EMAIL = 'USER_EMAIL';
+export const USER_PHONE = 'USER_PHONE';
+export const USER_FNAME = 'USER_FNAME';
+export const USER_LNAME = 'USER_LNAME';
+export const USER_COMPANYNAME = 'USER_COMPANYNAME';
+export const USER_JOBTITLE = 'USER_JOBTITLE';

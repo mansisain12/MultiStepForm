@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, SafeAreaView} from 'react-native';
+import {Text, SafeAreaView, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {useDispatch} from 'react-redux';
 import AntDesignIcon from '../../components/AntDesignIcon';
@@ -7,7 +7,7 @@ import AntDesignIcon from '../../components/AntDesignIcon';
 import TextField from '../../components/TextField';
 import ButtonComponent from '../../components/ButtonComponent';
 import {validateEmail, validatePhNumber} from '../../utils/validation';
-import {userDetails} from '../../redux/actions/userAction';
+import {userEmail, userPhone} from '../../redux/actions/userAction';
 import {styles} from '../../utils/globalStyle';
 
 const ContactDetailsForm = () => {
@@ -36,17 +36,15 @@ const ContactDetailsForm = () => {
   };
 
   const btnHandler = () => {
-    const userInfo = {
-      email: email,
-      phoneNum: phoneNum,
-    };
-    dispatch(userDetails(userInfo));
+    dispatch(userEmail(email));
+    dispatch(userPhone(phoneNum));
     navigation.navigate('NameForm');
   };
 
   return (
     <>
       <AntDesignIcon />
+      <View style={styles.screenHeader}></View>
       <SafeAreaView style={styles.screen}>
         <Text style={styles.headerTxt}>
           What is the email and phone number that we can reach you the best?

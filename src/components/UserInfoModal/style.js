@@ -13,18 +13,23 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderWidth: 1,
     borderColor: 'lightgrey',
-    height: '50%',
+    height: '52%',
   },
-  message: {
-    textAlign: 'center',
-    marginBottom: 25,
-    fontSize: 16,
+  modalHeader: {
+    fontSize: 25,
+    marginBottom: '20%',
+  },
+  infoContainer: {
+    marginLeft: '8%',
+  },
+  userData: {
+    fontSize: 19,
   },
   btnStyle: {
     alignSelf: 'flex-end',
     color: color.primary,
-    marginTop: '105%',
-    marginRight: 10,
-    fontSize: 14,
+    marginTop: '22%',
+    marginRight: 15,
+    fontSize: 18,
   },
 });
