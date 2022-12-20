@@ -50,15 +50,14 @@ const ContactDetailsForm = () => {
           What is the email and phone number that we can reach you the best?
         </Text>
         <TextField
-          placeholder="Email"
+          label="Email Address *"
           value={email}
           onBlur={() => emailValidator()}
           onChangeText={val => setEmail(val)}
           errorMessage={validation.emailError}
         />
         <TextField
-          name="phone"
-          placeholder="Mobile number"
+          label="Phone *"
           value={phoneNum}
           onBlur={() => phoneNumValidator()}
           onChangeText={val => setPhoneNum(val)}

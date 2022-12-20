@@ -48,14 +48,14 @@ const ContactDetailsForm = () => {
         </Text>
 
         <TextField
-          placeholder="First Name"
+          label="First Name *"
           value={fName}
           onBlur={() => fNameValidator()}
           onChangeText={val => setFName(val)}
           errorMessage={validation.fNameError}
         />
         <TextField
-          placeholder="Last Name"
+          label="Last Name *"
           value={lName}
           onBlur={() => lNameValidator()}
           onChangeText={val => setLName(val)}

@@ -2,7 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import DevFieldScreen from '../screens/DevFieldScreen';
+import DevelopmentScreen from '../screens/DevelopmentScreen';
 import DepartmentScreen from '../screens/DepartmentScreen';
 import ContactDetailsForm from '../screens/UserFormScreen/ContactDetailsForm';
 import UserNameForm from '../screens/UserFormScreen/UserNameForm';
@@ -14,7 +14,7 @@ const AppNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Development" component={DevFieldScreen} />
+        <Stack.Screen name="Development" component={DevelopmentScreen} />
         <Stack.Screen name="Department" component={DepartmentScreen} />
         <Stack.Screen name="ContactForm" component={ContactDetailsForm} />
         <Stack.Screen name="NameForm" component={UserNameForm} />

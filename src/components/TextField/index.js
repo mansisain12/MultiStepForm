@@ -1,14 +1,21 @@
 import React from 'react';
-import {View, TextInput, Text} from 'react-native';
+import {View, Text} from 'react-native';
+import {TextInput} from 'react-native-paper';
 import {styles} from './styles';
 
 const TextField = props => {
-  const {errorMessage} = props;
+  const {errorMessage, label} = props;
 
   return (
     <>
       <View style={styles.textInput}>
-        <TextInput {...props} placeholderTextColor="black" />
+        <TextInput
+          {...props}
+          mode="outlined"
+          label={label}
+          outlineColor="lightgrey"
+          theme={{colors: {primary: 'red'}}}
+        />
       </View>
       <Text style={styles.errmsg}>{errorMessage}</Text>
     </>

@@ -8,7 +8,7 @@ import ButtonComponent from '../../components/ButtonComponent';
 import {styles} from '../../utils/globalStyle';
 import {userDevelopment} from '../../redux/actions/userAction';
 
-const DevFieldScreen = () => {
+const DevelopmentScreen = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
@@ -50,4 +50,4 @@ const DevFieldScreen = () => {
     </>
   );
 };
-export default DevFieldScreen;
+export default DevelopmentScreen;

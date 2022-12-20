@@ -1,5 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {color} from '../../constant/color';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 export const styles = StyleSheet.create({
   screen: {
@@ -20,6 +21,6 @@ export const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     padding: 15,
-    fontSize: 17,
+    fontSize: Platform.OS === 'android' ? RFPercentage(2.2) : RFPercentage(2),
   },
 });

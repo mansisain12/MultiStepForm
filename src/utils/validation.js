@@ -8,7 +8,6 @@ export const validatePhNumber = mobileNumber => {
   return re.test(mobileNumber);
 };
 export const validateName = name => {
-  //var re = /^[\w'\-,.]*[^_!¡?÷?¿\/\\+=@#$%ˆ&*(){}|~<>;:[\]]*$/;
   var re = /^[a-zA-Z ]+$/;
   return re.test(name);
 };

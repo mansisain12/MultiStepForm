@@ -57,14 +57,14 @@ const ContactDetailsForm = ({navigation}) => {
         </Text>
 
         <TextField
-          placeholder="Company Name"
+          label="Company Name *"
           value={companyName}
           onBlur={() => companyNameValidator()}
           onChangeText={val => setCompanyName(val)}
           errorMessage={validation.companyNameError}
         />
         <TextField
-          placeholder="Job Title"
+          label="Job Title *"
           value={jobTitle}
           onBlur={() => jobTitleValidator()}
           onChangeText={val => setJobTitle(val)}

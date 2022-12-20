@@ -1,5 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {color} from '../constant/color';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 export const styles = StyleSheet.create({
   screen: {
@@ -8,7 +9,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headerTxt: {
-    fontSize: 25,
+    fontSize: Platform.OS === 'android' ? RFPercentage(3.2) : RFPercentage(3),
     marginBottom: '10%',
     marginHorizontal: '6%',
   },
@@ -23,6 +24,6 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: 15,
-    marginTop: Platform.OS === 'ios' ? 40 : 20,
+    marginTop: Platform.OS === 'ios' ? '10%' : '7%',
   },
 });

@@ -1,5 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 import {color} from '../../constant/color';
+import {RFPercentage} from 'react-native-responsive-fontsize';
 
 export const styles = StyleSheet.create({
   container: {
@@ -13,23 +14,23 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderWidth: 1,
     borderColor: 'lightgrey',
-    height: '52%',
+    height: '50%',
   },
   modalHeader: {
-    fontSize: 25,
+    fontSize: Platform.OS === 'android' ? RFPercentage(3.2) : RFPercentage(3),
     marginBottom: '20%',
   },
   infoContainer: {
     marginLeft: '8%',
   },
   userData: {
-    fontSize: 19,
+    fontSize: Platform.OS === 'android' ? RFPercentage(2.4) : RFPercentage(2.1),
   },
   btnStyle: {
     alignSelf: 'flex-end',
     color: color.primary,
     marginTop: '22%',
     marginRight: 15,
-    fontSize: 18,
+    fontSize: Platform.OS === 'android' ? RFPercentage(2.3) : RFPercentage(2),
   },
 });
