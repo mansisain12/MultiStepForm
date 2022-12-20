@@ -14,7 +14,6 @@ const TextField = props => {
           mode="outlined"
           label={label}
           outlineColor="lightgrey"
-          theme={{colors: {primary: 'red'}}}
         />
       </View>
       <Text style={styles.errmsg}>{errorMessage}</Text>

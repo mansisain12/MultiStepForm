@@ -7,6 +7,7 @@ import {
   USER_FNAME,
   USER_LNAME,
   USER_JOBTITLE,
+  RESET_MODAL,
 } from '../constants/userTypes';
 
 export const userDevelopment = user => ({
@@ -39,5 +40,9 @@ export const userCompanyName = user => ({
 });
 export const userJobTitle = user => ({
   type: USER_JOBTITLE,
+  payload: user,
+});
+export const resetModal = user => ({
+  type: RESET_MODAL,
   payload: user,
 });

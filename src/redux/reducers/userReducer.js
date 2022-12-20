@@ -7,6 +7,7 @@ import {
   USER_LNAME,
   USER_COMPANYNAME,
   USER_JOBTITLE,
+  RESET_MODAL,
 } from '../constants/userTypes';
 
 const initialState = {
@@ -21,7 +22,6 @@ const initialState = {
 };
 
 const userDetailsReducer = (state = initialState, action) => {
-  console.log(action.payload);
   switch (action.type) {
     case USER_DEVELOPMENT:
       return {...state, development: action.payload};
@@ -46,6 +46,10 @@ const userDetailsReducer = (state = initialState, action) => {
 
     case USER_JOBTITLE:
       return {...state, jobTitle: action.payload};
+
+    case RESET_MODAL:
+      console.log('initial state---->', initialState);
+      return initialState;
 
     default:
       return state;

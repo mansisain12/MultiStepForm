@@ -6,3 +6,4 @@ export const USER_FNAME = 'USER_FNAME';
 export const USER_LNAME = 'USER_LNAME';
 export const USER_COMPANYNAME = 'USER_COMPANYNAME';
 export const USER_JOBTITLE = 'USER_JOBTITLE';
+export const RESET_MODAL = 'RESET_MODAL';

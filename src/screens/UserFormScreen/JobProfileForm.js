@@ -9,6 +9,7 @@ import ButtonComponent from '../../components/ButtonComponent';
 import {validateName} from '../../utils/validation';
 import UserInfoModal from '../../components/UserInfoModal';
 import {styles} from '../../utils/globalStyle';
+import {resetModal} from '../../redux/actions/userAction';
 
 const ContactDetailsForm = ({navigation}) => {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ const ContactDetailsForm = ({navigation}) => {
     setIsModalVisible(true);
   };
   const closeBtnHandler = () => {
+    dispatch(resetModal());
     navigation.popToTop();
     setIsModalVisible(false);
   };
