@@ -13,10 +13,9 @@ export const styles = StyleSheet.create({
     marginBottom: '10%',
     marginHorizontal: '6%',
   },
-  screenHeader: {
-    borderWidth: 6,
-    borderColor: color.secondary,
+  progressBar: {
     borderRadius: 8,
+    height: '10%',
     marginHorizontal: '6%',
     marginTop: '10%',
   },

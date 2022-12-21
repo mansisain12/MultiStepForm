@@ -7,6 +7,8 @@ import {useDispatch} from 'react-redux';
 import ButtonComponent from '../../components/ButtonComponent';
 import {styles} from '../../utils/globalStyle';
 import {userDevelopment} from '../../redux/actions/userAction';
+import HeaderBar from '../../components/HeaderBar';
+import {increaseProgress} from '../../redux/actions/userAction';
 
 const DevelopmentScreen = () => {
   const navigation = useNavigation();
@@ -19,7 +21,7 @@ const DevelopmentScreen = () => {
         size={20}
         style={[styles.iconContainer, {alignSelf: 'flex-end'}]}
       />
-      <View style={styles.screenHeader}></View>
+      <HeaderBar />
       <View style={styles.screen}>
         <Text style={styles.headerTxt}>
           Welcome! 😊 What are you looking for ?
@@ -29,21 +31,24 @@ const DevelopmentScreen = () => {
           btnText="APP DEVELOPMENT"
           onPress={() => {
             dispatch(userDevelopment('App development')),
-              navigation.navigate('Department');
+              dispatch(increaseProgress());
+            navigation.navigate('Department');
           }}
         />
         <ButtonComponent
           btnText="WEB DEVELOPMENT"
           onPress={() => {
             dispatch(userDevelopment('Web development')),
-              navigation.navigate('Department');
+              dispatch(increaseProgress());
+            navigation.navigate('Department');
           }}
         />
         <ButtonComponent
           btnText="BACKEND DEVELOPMENT"
           onPress={() => {
             dispatch(userDevelopment('Backend development')),
-              navigation.navigate('Department');
+              dispatch(increaseProgress());
+            navigation.navigate('Department');
           }}
         />
       </View>

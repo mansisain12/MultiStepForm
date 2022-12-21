@@ -10,10 +10,11 @@ const TextField = props => {
     <>
       <View style={styles.textInput}>
         <TextInput
-          {...props}
           mode="outlined"
           label={label}
           outlineColor="lightgrey"
+          theme={{colors: {primary: 'lightgrey'}}}
+          {...props}
         />
       </View>
       <Text style={styles.errmsg}>{errorMessage}</Text>

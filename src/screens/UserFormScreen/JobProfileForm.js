@@ -10,6 +10,8 @@ import {validateName} from '../../utils/validation';
 import UserInfoModal from '../../components/UserInfoModal';
 import {styles} from '../../utils/globalStyle';
 import {resetModal} from '../../redux/actions/userAction';
+import HeaderBar from '../../components/HeaderBar';
+import {increaseProgress} from '../../redux/actions/userAction';
 
 const ContactDetailsForm = ({navigation}) => {
   const dispatch = useDispatch();
@@ -41,6 +43,7 @@ const ContactDetailsForm = ({navigation}) => {
   const btnHandler = () => {
     dispatch(userCompanyName(companyName));
     dispatch(userJobTitle(jobTitle));
+    dispatch(increaseProgress());
     setIsModalVisible(true);
   };
   const closeBtnHandler = () => {
@@ -52,7 +55,7 @@ const ContactDetailsForm = ({navigation}) => {
   return (
     <>
       <AntDesignIcon />
-      <View style={styles.screenHeader}></View>
+      <HeaderBar />
       <SafeAreaView style={styles.screen}>
         <Text style={styles.headerTxt}>
           Thanks!😊 Just a few more details and we are done!

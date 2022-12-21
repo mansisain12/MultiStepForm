@@ -9,6 +9,8 @@ import TextField from '../../components/TextField';
 import ButtonComponent from '../../components/ButtonComponent';
 import {validateName} from '../../utils/validation';
 import {styles} from '../../utils/globalStyle';
+import HeaderBar from '../../components/HeaderBar';
+import {increaseProgress} from '../../redux/actions/userAction';
 
 const ContactDetailsForm = () => {
   const dispatch = useDispatch();
@@ -35,13 +37,14 @@ const ContactDetailsForm = () => {
   const btnHandler = () => {
     dispatch(userFirstName(fName));
     dispatch(userLastName(lName));
+    dispatch(increaseProgress());
     navigation.navigate('JobProfileForm');
   };
 
   return (
     <>
       <AntDesignIcon />
-      <View style={styles.screenHeader}></View>
+      <HeaderBar />
       <SafeAreaView style={styles.screen}>
         <Text style={styles.headerTxt}>
           Could you tell us a bit more about yourself?
